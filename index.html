@@ -11,12 +11,12 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="Images/logo.png" alt="logo" class="logo">
+                <!-- <img src="Images/logo.png" alt="logo" class="logo"> -->
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/">About</a></li>                    
-                    <li><a href="/">Services</a></li>
-                    <li><a href="/">Portfolio</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="/">Interests</a></li>
                     <li><a href="/">Contact</a></li>
                 </ul>
             </nav>
@@ -26,6 +26,7 @@
             </div>
         </div>
     </div>
+    <!-- about -->
     <div id="about">
         <div class="container">
             <div class="row">
@@ -33,11 +34,53 @@
                     <img src="Images/akanshpic.jpg" alt="Akanshpic">
                 </div>
                 <div class="about-col-2">
-                    <h1>About me</h1>
+                    <h1 class="sub-title">About me</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, voluptates, perferendis libero deserunt non nostrum doloribus officiis quidem facere commodi quam ipsum voluptatum reprehenderit nulla odit ratione, atque mollitia delectus!</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                    <p class="tab-links"onclick="openTab('experience')">Experience</p>
+                    <p class="tab-links"onclick="openTab('education')">Education</p>
+
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI</span><br>Designing Web Interface</li>
+                        <li><span>Angular</span><br>Web Development</li>
+
+                </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2022-Current</span><br>Internship at Tarento Technologies</li>
+                    </ul>
+                </div> 
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022</span><br>Training at Tarento Technologies</li>
+                        <li><span>2022</span><br>Certification on Full Stack Web Developer Bootcamp,Udemy</li>
+                        <li><span>2016</span><br>MSc-Informatics from IIC,University of Delhi</li>
+                        <li><span>2012</span><br>BSc-Electronics(H) from University of Delhi</li>
+                </ul>
+                </div>
                 </div>
 
             </div>
         </div>
     </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function openTab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
 </body>
 </html>
